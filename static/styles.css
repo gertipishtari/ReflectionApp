@@ -1,0 +1,279 @@
+/* static/styles.css */
+:root {
+    --background-color: #f5f5f7;
+    --card-background: #ffffff;
+    --text-color: #1d1d1f;
+    --primary-color: #0071e3;
+    --secondary-color: #86868b;
+    --border-color: #d2d2d7;
+    --question-color: #f2f2f7;
+    --response-color: #e8f0fe;
+    --intro-color: #e6e6ea;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Styles for language selection */
+#language-selection {
+    text-align: center;
+}
+
+.language-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;  /* Allow wrapping */
+}
+
+.language-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 0.5rem;  /* Add some vertical spacing between buttons */
+}
+
+.language-btn:hover {
+    background-color: #2385f5;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .language-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .language-btn {
+        width: 80%;  /* Make buttons wider on small screens */
+        max-width: 200px;  /* But not too wide */
+    }
+}
+
+/* Styles for consent form */
+#consent-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.consent-content {
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.consent-content p {
+    margin-bottom: 1rem;
+}
+
+.consent-content ol {
+    padding-left: 1.5rem;
+}
+
+.consent-content li {
+    margin-bottom: 0.5rem;
+}
+
+#consent-form .btn {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+
+/* Rest of the existing styles */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2385f5;
+}
+
+#name, #email {
+    width: 60%;  /* Adjust this value as needed */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#start-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#chat-box {
+    flex-grow: 1;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.message {
+    max-width: 80%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 18px;
+    line-height: 1.4;
+}
+
+.question {
+    align-self: flex-start;
+    background-color: var(--question-color);
+}
+
+.response {
+    align-self: flex-end;
+    background-color: var(--response-color);
+    margin-left: auto;
+}
+
+.main-question {
+    font-weight: 500;
+    border-left: 4px solid var(--primary-color);
+}
+
+.main-question::before {
+    content: attr(data-question-number);
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    }
+
+.followup-question {
+    font-style: italic;
+    }
+
+.followup-question::before {
+    content: attr(data-followup-label);
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    }
+
+.intro-message {
+    background-color: var(--intro-color);
+    align-self: flex-start;
+    }
+
+.intro-message::before {
+    content: attr(data-intro-label);
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    }
+
+#response-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    }
+
+#response-input {
+    width: calc(100% - 1.6rem);
+    margin-bottom: 1rem;
+    resize: vertical;
+    min-height: 100px;
+    }
+
+#send-btn {
+    align-self: flex-end;
+    }
+
+#typing-indicator {
+    font-style: italic;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    background-color: var(--question-color);
+    border-radius: 18px;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+    }
+
+@media (max-width: 600px) {
+    .card {
+    padding: 1rem;
+    }
+
+.message {
+max-width: 90%;
+}
+}
+
+.btn:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}
