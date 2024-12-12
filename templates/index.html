@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReflectionApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div id="language-selection">
+                <h1>ReflectionApp</h1>
+                <div class="language-buttons">
+                    <button class="language-btn" data-lang="en">English</button>
+                    <button class="language-btn" data-lang="de">Deutsch</button>
+                    <button class="language-btn" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="et">Eesti Keel</button>
+                </div>
+            </div>
+            <div id="consent-form" style="display: none;">
+                <h1 id="consent-title">Consent Form</h1>
+                <div class="consent-content">
+                    <!-- Content will be dynamically updated based on selected language -->
+                </div>
+                <button id="consent-btn" class="btn">Agree</button>
+            </div>
+            <div id="start-form" style="display: none;">
+                <h1>Reflection App</h1>
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="E-Mail" required>
+                </div>
+                <button id="start-btn" class="btn">Start</button>
+            </div>
+            <div id="chat-container" style="display: none;">
+                <div id="chat-box"></div>
+                <form id="response-form">
+                    <textarea id="response-input" placeholder="Your answer..."></textarea>
+                    <button id="send-btn" class="btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
