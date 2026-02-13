@@ -69,14 +69,13 @@ gunicorn --preload --workers 3 --bind unix:totbot.sock -m 007 app:app
 
 ```
 ReflectionApp/
-├── app.py              # Main application (Flask routes, LLM logic, DB models)
-├── requirements.txt    # Python dependencies
-├── .gitignore
+├── app.py
+├── requirements.txt
 ├── static/
-│   ├── app.js          # Frontend JavaScript (chat UI, language handling)
-│   └── styles.css      # Stylesheet
+│   ├── app.js
+│   └── styles.css
 └── templates/
-    └── index.html      # HTML template
+    └── index.html
 ```
 
 ## License
